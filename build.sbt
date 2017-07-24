@@ -72,14 +72,6 @@ buildInfoPackage := "org.scalastyle"
 
 seq(filterSettings: _*)
 
-if (System.getProperty("scalastyle.publish-ivy-only") == "true") {
-  Seq()
-}  else {
-  Seq(aetherPublishBothSettings: _*)
-}
-
-aether.Aether.aetherLocalRepo := Path.userHome / "dev" / "repo"
-
 EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Managed
 
 releaseSettings
